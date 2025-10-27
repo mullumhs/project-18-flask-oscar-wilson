@@ -1,16 +1,28 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return f'<h1>Hello!</h1>'
+    return render_template("index.html")
 
-@app.route('/hello/<name>')
-def hello(name):
-    return f'<h1>Hello, {name}!</h1>'
+@app.route('/<name>/<int:yello>')
+def hello(name, yello):
+    return render_template("hello.html", name=name, user_logged_in=yello)
+
+@app.route('/poopy')
+def poopy():
+    list1=[n**3 for n in range(20)]
+    list2=[3*(n**2) for n in range(20)]
+    list3=[6*n for n in range(20)]
+    return render_template("poopy.html", list1=list1, list2=list2, list3=list3)
+
+@app.route('/list')
+def list():
+    stringo = "Panis angelicus Fit panis hominum Dat panis coelicus Figuris terminum O res mirabilis Manducat Dominum Pauper, pauper Servus et humilis Pauper, pauper Servus et humilis"
+    listo = stringo.split()
+    return render_template("list.html", items=listo)
 
 @app.route('/calc/<int:num1>/<string:operation>/<int:num2>')
-
 def calculator(num1, operation, num2):
     op = operation.lower().strip()
     if op == "add":

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    {% if user_logged_in %}
+
+    <h1>Hello {{name | title}}!</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consequuntur odio expedita repudiandae ipsa iusto enim nobis quis voluptatum! Culpa, quis. Obcaecati eum quos voluptas. Quos natus voluptatum tempora libero!</p>
+
+    {% else %}
+
+    <p>Please log in, {{ name }}. (Change the /0 to a /1 in the URL)</p>
+
+    {% endif %}
+
+</body>
+</html>
