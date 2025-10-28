@@ -1,0 +1,12 @@
+{% extends "contact_base.html" %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block content %}
+<h2>Thank You, {{ name }}!</h2>
+<p>We have received your message:</p>
+<blockquote class="blockquote">
+    <p class="mb-0">{{ message }}</p>
+</blockquote>
+<a href="{{ url_for('contact') }}" class="btn btn-primary">Send Another Message</a>
+{% endblock %}
