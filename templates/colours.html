@@ -1,0 +1,25 @@
+{% extends 'colours_base.html' %}
+
+{% set lorem = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia eius culpa voluptatem veritatis enim. Dignissimos itaque porro doloremque delectus provident corrupti, tempore quis corporis, natus sunt repudiandae odio possimus at! Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, hic enim animi mollitia ullam dolore autem facere quisquam tenetur impedit veniam totam? Dicta quo ad velit est blanditiis voluptates soluta." %}
+
+{% block content %}
+
+    {% if colour in ['red', 'yellow', 'pink'] %}
+        <h2>Welcome to {{ colour | title }}!</h2>
+    {% else %}
+        <h2>Welcome to... Error! This colour is not supported!</h2>
+        <p>How did you get here?</p>
+    {% endif %}
+
+
+    {% if colour == 'red' %}
+        <p style="background-color:#ff555b">{{ lorem }}</p>
+    {% elif colour == 'yellow' %}
+        <p style="background-color:#ffe640">{{ lorem }}</p>
+    {% elif colour == 'pink' %}
+        <p style="background-color:#ffb0db">{{ lorem }}</p>
+    {% else %}
+        <p>{{ lorem }}</p>
+    {% endif %}
+
+{% endblock %}

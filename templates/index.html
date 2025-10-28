@@ -9,10 +9,12 @@
     <h1>Hello World!</h1>
     <p>Options 
         <ul>
-            <li>/{name}/{logged_in?}</li>
-            <li>/calc/{num1}/{operation}/{num2}</li>
-            <li>/list</li>
-            <li>/poopy</li>
+            <li><a href="{{ url_for('hello', name='name', yello=0) }}">/{name}/{logged_in?}</a></li>
+            <li><a href="{{ url_for('calculator', num1=2, operation='enter_operation', num2=3) }}">/calc/{num1}/{operation}/{num2}</a></li>
+            <li><a href="{{ url_for('list') }}">/list</a></li>
+            <li><a href="{{ url_for('poopy') }}">/poopy</a></li>
+            <li><a href="{{ url_for('colours', colour='red') }}">/colours/red</a></li>
+            <li><a href="{{ url_for('cloudworld') }}">/clouds</a></li>
         </ul>
     </p>
 </body>

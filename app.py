@@ -16,6 +16,14 @@ def poopy():
     list3=[6*n for n in range(20)]
     return render_template("poopy.html", list1=list1, list2=list2, list3=list3)
 
+@app.route('/colours/<colour>')
+def colours(colour):
+    return render_template("colours.html", colour=colour)
+
+@app.route('/cloudworld')
+def cloudworld():
+    return render_template("clouds_base.html")
+
 @app.route('/list')
 def list():
     stringo = "Panis angelicus Fit panis hominum Dat panis coelicus Figuris terminum O res mirabilis Manducat Dominum Pauper, pauper Servus et humilis Pauper, pauper Servus et humilis"
